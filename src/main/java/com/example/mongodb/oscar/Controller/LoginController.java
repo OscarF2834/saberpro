@@ -45,12 +45,12 @@ public class LoginController {
         }
 
         model.addAttribute("error", "Usuario o contraseña incorrecta");
-        return "Login-coordinador";
+        return "login-coordinador";
     }
 
     @GetMapping("/login/estudiante")
     public String estudianteLogin() {
-        return "Login-estudiante"; // 
+        return "login-estudiante"; // 
     }
 
     @PostMapping("/login/estudiante")
