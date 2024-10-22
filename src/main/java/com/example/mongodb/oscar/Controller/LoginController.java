@@ -33,7 +33,7 @@ public class LoginController {
     
     @GetMapping("/login/coordinador")
     public String coordinadorLogin() {
-        return "login-coordinador"; 
+        return "Login-coordinador"; 
     }
 
     @PostMapping("/login/coordinador")
@@ -45,12 +45,12 @@ public class LoginController {
         }
 
         model.addAttribute("error", "Usuario o contraseña incorrecta");
-        return "login-coordinador";
+        return "Login-coordinador";
     }
 
     @GetMapping("/login/estudiante")
     public String estudianteLogin() {
-        return "login-estudiante"; // 
+        return "Login-estudiante"; // 
     }
 
     @PostMapping("/login/estudiante")
@@ -66,7 +66,7 @@ public class LoginController {
         }
 
         model.addAttribute("error", "Usuario o contraseña incorrecta");
-        return "login-estudiante";
+        return "Login-estudiante";
     }
 
 }
