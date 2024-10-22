@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Información del Estudiante</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/team_table.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.png}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" 
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .aprobado {
+            color: green;
+            font-weight: bold;
+        }
+        .desaprobado {
+            color: red;
+            font-weight: bold;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+        }
+        .cont_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .card {
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .info-card {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="cont_header">
+        <div class="BIENVENIDO">
+            <a th:href="@{/}" style="color: white;">
+                <strong>Salir</strong>
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-header">
+                <h4>Información del Estudiante</h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>ID:</strong>
+                            <p th:text="${estudiante.id}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Usuario:</strong>
+                            <p th:text="${estudiante.user}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Contraseña:</strong>
+                            <p th:text="${estudiante.password}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Identificación:</strong>
+                            <p th:text="${estudiante.identificacion}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Nombre:</strong>
+                            <p th:text="${estudiante.nombre}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Apellido:</strong>
+                            <p th:text="${estudiante.apellido}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Correo Electrónico:</strong>
+                            <p th:text="${estudiante.correo}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Teléfono:</strong>
+                            <p th:text="${estudiante.telefono}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Registro:</strong>
+                            <p th:text="${estudiante.registro}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Puntaje Total:</strong>
+                            <p th:text="${estudiante.puntajetotal}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Nivel Total:</strong>
+                            <p th:text="${estudiante.niveltotal}"></p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="info-card">
+                            <strong>Resultado Final:</strong>
+                            <p th:if="${estudiante.puntajetotal >= 80}" class="aprobado">Aprobado</p>
+                            <p th:if="${estudiante.puntajetotal < 80}" class="desaprobado">Desaprobado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Optional JavaScript -->
+<script th:src="@{https://code.jquery.com/jquery-3.3.1.slim.min.js}" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js}" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86P" crossorigin="anonymous"></script>
+<script th:src="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js}" 
+    integrity="sha384-ChfqqxuZUCnJSK3+xGxmJf1lWr2yENqwvHeq3Xndhr7fFA8vbXk5r5ZGfFa/e7TE" crossorigin="anonymous"></script>
+
+</body>
+</html>

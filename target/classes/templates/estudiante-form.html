@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Formulario Estudiante</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" th:href="@{/css/team_form.css}">
+    <link rel="shortcut icon" th:href="@{/img/favicon.png}" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css}" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cont {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+        .name label, 
+        .pais label, 
+        .presidente label, 
+        .siglas label {
+            font-weight: 600;
+        }
+        .return {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .return a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #007bff;
+        }
+        .return a:hover {
+            text-decoration: underline;
+        }
+        .button {
+            text-align: center;
+        }
+        .button button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .button button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div class="cont">
+        <h1 class="text-center mb-4">Información de Estudiante</h1> <!-- Título agregado -->
+        <div class="return">
+            <a th:href="@{/estudiante/}">Regresar</a>
+        </div>
+        <form th:action="@{/estudiante/save}" th:object="${estudiante}" method="post">
+            <input type="hidden" th:field="*{id}">
+            
+            <div class="form-group">
+                <label for="user">Usuario:</label>
+                <input type="text" id="user" th:field="*{user}" class="form-control" placeholder="Ingrese el usuario">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="text" id="password" th:field="*{password}" class="form-control" placeholder="Ingrese una contraseña">
+            </div>
+
+            <div class="form-group">
+                <label for="identificacion">Identificacion:</label>
+                <input type="text" id="identificacion" th:field="*{identificacion}" class="form-control" placeholder="Ingrese el numero de identificacion">
+            </div>
+
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" th:field="*{nombre}" class="form-control" placeholder="Ingrese el nombre">
+            </div>
+			
+			<div class="form-group">
+				<label for="apellido">Apellido:</label>
+				<input type="text" id="apellido" th:field="*{apellido}" class="form-control" placeholder="Ingrese el apellido">
+		    </div>
+			 
+			 <div class="form-group">
+				<label for="correo">Email:</label>
+				<input type="text" id="correo" th:field="*{correo}" class="form-control" placeholder="Ingrese el email">
+			 </div>
+			 
+			 <div class="form-group">
+				<label for="telefono">Telefono:</label>
+				<input type="text" id="telefono" th:field="*{telefono}" class="form-control" placeholder="Ingrese el telefono">
+			</div>
+						 
+			<div class="form-group">
+				<label for="registro">Numero de Registro:</label>
+				<input type="text" id="registro" th:field="*{registro}" class="form-control" placeholder="Ingrese el numero de registro">
+			</div>		
+			
+			<div class="form-group">
+				<label for="puntajetotal">Puntaje Total:</label>
+				<input type="text" id="puntajetotal" th:field="*{puntajetotal}" class="form-control" placeholder="Ingrese el Puntaje Total">
+			</div>
+			<div class="form-group">
+ 				<label for="niveltotal">Puntaje Nivel:</label>
+ 				<input type="text" id="niveltotal" th:field="*{niveltotal}" class="form-control" placeholder="Ingrese el Nivel total">
+		 	</div>
+			<div class="form-group">
+				<label for="comunicacionescrita">Prueba Comunicacion Escrita:</label>
+				<input type="text" id="comunicacionescrita" th:field="*{comunicacionescrita}" class="form-control" placeholder="Ingrese la prueba de comunicacion escrita">
+			 </div>
+			 <div class="form-group">
+				<label for="nivelcomunicacionescrita">Nivel Comunicacion Escrita:</label>
+				<input type="text" id="nivelcomunicacionescrita" th:field="*{nivelcomunicacionescrita}" class="form-control" placeholder="Ingrese el nivel de comunicacion escrita">
+			 </div>	
+			 <div class="form-group">
+ 				<label for="razonamiento">Prueba Razonamiento Cuantitativo:</label>
+ 				<input type="text" id="razonamiento" th:field="*{razonamiento}" class="form-control" placeholder="Ingrese la prueba de razonamiento cuantitativo">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="nivelrazonamiento">Nivel Prueba Razonamiento Cuantitativo:</label>
+ 				<input type="text" id="nivelrazonamiento" th:field="*{nivelrazonamiento}" class="form-control" placeholder="Ingrese el nivel de la prueba de razonamiento cuantitativo">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="lectura">Prueba Lectura Critica:</label>
+ 				<input type="text" id="lectura" th:field="*{lectura}" class="form-control" placeholder="Ingrese la prueba de lectura critica">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="nivellectura">Nivel Lectura Critica:</label>
+ 				<input type="text" id="nivellectura" th:field="*{nivellectura}" class="form-control" placeholder="Ingrese el nivel de lectura critica">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="competencias">Prueba Competencias Ciudadanas:</label>
+ 				<input type="text" id="competencias" th:field="*{competencias}" class="form-control" placeholder="Ingrese la prueba de competencias ciudadanas">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="nivelcompetencias">Nivel Competencias Ciudadanas:</label>
+ 				<input type="text" id="nivelcompetencias" th:field="*{nivelcompetencias}" class="form-control" placeholder="Ingrese el nivel de competencias ciudadanas">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="ingles">Prueba Ingles:</label>
+ 				<input type="text" id="ingles" th:field="*{ingles}" class="form-control" placeholder="Ingrese la prueba de ingles">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="nivelingles">Nivel ingles:</label>
+ 				<input type="text" id="nivelingles" th:field="*{nivelingles}" class="form-control" placeholder="Ingrese el nivel de ingles">
+ 			 </div>	
+			 <div class="form-group">
+ 				<label for="formulacionproyectos">Prueba Formulación De Proyectos De Ingeniería:</label>
+ 				<input type="text" id="formulacionproyectos" th:field="*{formulacionproyectos}" class="form-control" placeholder="Ingrese la prueba de Formulación De Proyectos">
+ 			 </div>
+			 <div class="form-group">
+ 				<label for="nivelformulacion">Nivel Formulación De Proyectos:</label>
+ 				<input type="text" id="nivelformulacion" th:field="*{nivelformulacion}" class="form-control" placeholder="Ingrese el nivel de formulacion de proyectos">
+ 			 </div>	
+            <div class="button">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+</main>
+<!-- Optional JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT1b+FQ2mcY6a8F+0e3g6e1x6O3BPC/pM6Hk6t3jQRc6wCfS5g" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-JZ94AyGLe8sQJ/fI+g9VjI1p3KO+p1ee0ztV7U2C0GxEkEVqozRg2I7P2F8Kte76" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-0evHe/X+R7Zb3aaDf6w1P9y8L5sDrmvnGJsB3HSTGkDqE0ZsA4BlzK9y9C4qD2Ea" crossorigin="anonymous"></script>
+</body>
+</html>

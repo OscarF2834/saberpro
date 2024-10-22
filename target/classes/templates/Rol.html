@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Seleccionar Rol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: space-between; /* Asegura que el footer esté en la parte inferior */
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            font-size: 2em;
+            margin: 0; /* Elimina el margen por defecto */
+        }
+
+        .main-container {
+            display: flex; /* Alinea el contenedor del login y la imagen en fila */
+            align-items: center; /* Centra verticalmente los elementos */
+            margin-bottom: 20px; /* Espacio entre el contenedor y el footer */
+        }
+
+        .container {
+            background: linear-gradient(135deg, #ffffff, #e0e0e0);
+            padding: 40px;
+            background-color: red;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+            border: 2px solid #007bff; /* Agregado borde de color azul */
+            transition: transform 0.3s ease; /* Añadido efecto al pasar el mouse */
+        }
+
+        .container:hover {
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+
+        .container a {
+            text-decoration: none;
+        }
+
+        .container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            text-align: center;
+            font-size: 16px;
+            margin: 15px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease, transform 0.2s; /* Añadir transición para el efecto */
+        }
+
+        .container button:hover {
+            background-color: #45a049;
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+
+        .container a:nth-child(2) button {
+            background-color: #2196F3;
+        }
+
+        .container a:nth-child(2) button:hover {
+            background-color: #0b7dda;
+            transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+        }
+
+        .container a:nth-child(2) button:active {
+            background-color: #066ab8;
+        }
+
+        .hero-section {
+            background-color: #007bff;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            background-image: url('https://www.qhubocali.com/actualidad/estas-son-las-nuevas-fechas-para-presentar-el-icfes/');
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            margin-bottom: 20px; /* Espacio entre el header y el contenedor */
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #007bff; /* Color de fondo azul */
+            color: white;
+            width: 100%; /* Asegura que el footer ocupe todo el ancho */
+        }
+    </style>
+</head>
+<body>
+    <div class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Pruebas Saber Pro</h1>
+            <p class="hero-subtitle">Unidades Tecnologicas de Santander</p>
+            <p class="hero-subtitle">Grupo: B192P</p>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="container">
+            <h2>Selecciona tu Rol</h2>
+            <a href="/login/coordinador">
+                <button type="button">Iniciar sesión como Coordinador</button>
+            </a>
+            <a href="/login/estudiante">
+                <button type="button">Iniciar sesión como Estudiante</button>
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 Oscar Felipe Segovia Alvarado. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
