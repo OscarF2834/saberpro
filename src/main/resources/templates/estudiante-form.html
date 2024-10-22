@@ -171,6 +171,34 @@
  				<label for="nivelformulacion">Nivel Formulación De Proyectos:</label>
  				<input type="text" id="nivelformulacion" th:field="*{nivelformulacion}" class="form-control" placeholder="Ingrese el nivel de formulacion de proyectos">
  			 </div>	
+ 			 <div class="form-group">
+  				<label for="pensamiento">Prueba Pensamiento Científico Matemáticas Y Estadística:</label>
+  				<input type="text" id="pensamiento" th:field="*{pensamiento}" class="form-control" placeholder="Ingrese la prueba de Pensamiento Científico Matemáticas Y Estadística">
+  			 </div>	
+  			  <div class="form-group">
+ 				<label for="pensamiento">Nivel Pensamiento Científico Matemáticas Y Estadística:</label>
+ 				<input type="text" id="pensamiento" th:field="*{pensamiento}" class="form-control" placeholder="Ingrese la prueba de  Pensamiento Científico Matemáticas Y Estadísticas">
+ 			 </div>
+ 			 <div class="form-group">
+  				<label for="diseño">Prueba Diseño De Software:</label>
+  				<input type="text" id="diseño" th:field="*{diseño}" class="form-control" placeholder="Ingrese la prueba de Diseño De Software">
+  			 </div>
+  			 <div class="form-group">
+  				<label for="diseño">Nivel Diseño De Software:</label>
+  				<input type="text" id="diseño" th:field="*{diseño}" class="form-control" placeholder="Ingrese el nivel la prueba de Diseño De Software">
+  			 </div>
+  			 <div class="form-group">
+			     <label for="niveltotalingles">Nivel Total de Ingles:</label>
+			     <select id="niveltotalingles" th:field="*{niveltotalingles}" class="form-control">
+					 <option value="A0" th:text="'A0'" th:selected="${niveltotalingles == 'A0'}">A0</option>
+			         <option value="A1" th:text="'A1'" th:selected="${niveltotalingles == 'A1'}">A1</option>
+			         <option value="A2" th:text="'A2'" th:selected="${niveltotalingles == 'A2'}">A2</option>
+			         <option value="B1" th:text="'B1'" th:selected="${niveltotalingles == 'B1'}">B1</option>
+			         <option value="B2" th:text="'B2'" th:selected="${niveltotalingles == 'B2'}">B2</option>
+					 <option value="C1" th:text="'C1'" th:selected="${niveltotalingles == 'C1'}">C1</option>
+			         <option value="C2" th:text="'C2'" th:selected="${niveltotalingles == 'C2'}">C2</option>
+			     </select>
+			 </div>	
             <div class="button">
                 <button type="submit" class="btn btn-primary">Guardar</button>
             </div>
